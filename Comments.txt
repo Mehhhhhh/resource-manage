@@ -1,0 +1,3 @@
+The Android environment is configured.
+
+Now working on the part of downloading texture from server.
