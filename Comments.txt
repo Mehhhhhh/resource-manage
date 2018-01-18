@@ -1,3 +1,14 @@
 The Android environment is configured.
 
 Now working on the part of downloading texture from server.
+
+
+function of saving and loading are added. (not multithreading yet)
+
+
+
+
+
+Problems:
+
+Resources.Load() founction always returns null, don't know how to solve it.

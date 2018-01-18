@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Threading;
 
 public class Resource_manager : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Resource_manager : MonoBehaviour
 
         URL = new string[1];
         URL[0] = "https://openclipart.org/image/300px/svg_to_png/14546/tonyk-Gnu-Knight.png&disposition=attachment";
-        folderpath = Application.persistentDataPath + "/";
+        folderpath = Application.dataPath + "/Resources/Textures/";
       
 
     }
@@ -73,10 +74,10 @@ public class Resource_manager : MonoBehaviour
     }
 
     void LoadImage(string url) {
-        WWW www = new WWW(folderpath+"a");
-        Texture2D tex = new Texture2D(4,4);
-        www.LoadImageIntoTexture(tex);
-        obj.GetComponent<Renderer>().material.mainTexture = tex;
+        Texture2D tex= new Texture2D(4, 4);
+        tex = Resources.Load("/Textures/a") as Texture2D;
+        obj.GetComponent<Renderer>().material.mainTexture = tex ;
+        Debug.Log(Resources.Load("/Textures/a"));
     }
 
 
