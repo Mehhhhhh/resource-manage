@@ -6,9 +6,6 @@ Now working on the part of downloading texture from server.
 function of saving and loading are added. (not multithreading yet)
 
 
+resources.load() method is not feasible for runtime loading, this commit went back to use application.persistentdatapath, 
+and load file with WWW.
 
-
-
-Problems:
-
-Resources.Load() founction always returns null, don't know how to solve it.

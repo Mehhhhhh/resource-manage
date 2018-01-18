@@ -25,7 +25,7 @@ public class Resource_manager : MonoBehaviour
 
         URL = new string[1];
         URL[0] = "https://openclipart.org/image/300px/svg_to_png/14546/tonyk-Gnu-Knight.png&disposition=attachment";
-        folderpath = Application.dataPath + "/Resources/Textures/";
+        folderpath = Application.persistentDataPath + "/";
       
 
     }
@@ -74,10 +74,11 @@ public class Resource_manager : MonoBehaviour
     }
 
     void LoadImage(string url) {
-        Texture2D tex= new Texture2D(4, 4);
-        tex = Resources.Load("/Textures/a") as Texture2D;
-        obj.GetComponent<Renderer>().material.mainTexture = tex ;
-        Debug.Log(Resources.Load("/Textures/a"));
+        WWW www = new WWW("file:///"+ folderpath +"a");
+        Texture2D tex = new Texture2D(1,1);
+        www.LoadImageIntoTexture(tex);
+        obj.GetComponent<Renderer>().material.mainTexture = tex;
+        Debug.Log(tex);
     }
 
 
@@ -87,7 +88,6 @@ public class Resource_manager : MonoBehaviour
         {
 
             LoadImage("a");
-            Debug.Log("Test");
 
         }
 
